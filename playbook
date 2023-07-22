@@ -21,3 +21,16 @@
   - name: enable apache on startup and start service for redhat or centos
     service: name=httpd enabled=yes state=started
     when: ansible_os_family == "RedHat"
+
+
+sudo yum install -y https://s3.amazonaws.com/ec2-downloads-
+windows/SSMAgent/latest/linux_amd64/amazon-ssm-agent.rpm
+sudo systemctl enable amazon-ssm-agent
+sudo systemctl start amazon-ssm-agent
+sudo systemctl status amazon-ssm-agent
+
+
+
+
+sudo rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+sudo yum -y install ansible
